@@ -7,25 +7,46 @@
   <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 </head>
 <body>
-<header id="header">
-  <div class="inner wrapper">
-    <div class="logo">
-      <a href="#">
-        <img th:src="@{/img/logo1.png}">
-      </a>
+  <header id="header">
+    <div class="inner wrapper">
+      <div class="logo">
+        <a href="#">
+          <img th:src="@{/img/logo1.png}">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">PRESS</a></li>
+          <li><a href="#">SERVICE</a></li>
+          <li><a href="#">RECRUIT</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">PRESS</a></li>
-        <li><a href="#">SERVICE</a></li>
-        <li><a href="#">RECRUIT</a></li>
-        <li><a href="#">CONTACT</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
+
+  <section id="slide-img">
+    <!-- <h2>数画像を中央に注目させて見せる</h2> -->
+    <ul class="slider">
+      <li><img th:src="@{img/smp1.jpg}"></li>
+      <li><img th:src="@{img/smp2.jpg}"></li>
+      <li><img th:src="@{img/smp3.jpg}"></li>
+      <li><img th:src="@{img/smp1.jpg}"></li>
+      <li><img th:src="@{img/smp2.jpg}"></li>
+      <li><img th:src="@{img/smp3.jpg}"></li>
+    </ul>
+  </section>
+
+  <footer>
+
+  </footer>
+  <!-- import js-jquer-slick -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script th:src="@{javascript/main.js}"></script>
 </body>
 </html>
