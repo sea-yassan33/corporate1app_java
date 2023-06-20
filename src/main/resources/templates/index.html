@@ -3,8 +3,29 @@
 <head>
   <title th:text="${title}"></title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link th:href="@{/css/reset.css}" rel="stylesheet" type="text/css">
+  <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <p th:text="${test}"></p>
+<header id="header">
+  <div class="inner wrapper">
+    <div class="logo">
+      <a href="#">
+        <img th:src="@{/img/logo1.png}">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">PRESS</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">RECRUIT</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 </body>
 </html>
