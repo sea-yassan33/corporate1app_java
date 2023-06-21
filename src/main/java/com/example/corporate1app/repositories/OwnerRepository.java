@@ -7,5 +7,5 @@ import com.example.corporate1app.Owner;
 
 @Repository
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
-  
+
 }
