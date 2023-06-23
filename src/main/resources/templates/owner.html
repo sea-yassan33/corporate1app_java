@@ -20,12 +20,19 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
       <tr th:each="item : ${data}">
         <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
+        <td>
+          <form th:action="@{/owner/{id}/delete(id=${item.id})}" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <button type="submit" class="btn btn-danger">削除</button>
+          </form>
+        </td>
       </tr>
     </tbody>
   </table>

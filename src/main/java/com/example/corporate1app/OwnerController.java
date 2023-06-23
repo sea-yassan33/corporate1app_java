@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,6 +42,13 @@ public class OwnerController {
           @ModelAttribute("formModel") Owner owner,
           ModelAndView mav){
     repository.saveAndFlush(owner);
+    return new ModelAndView("redirect:/owner");
+  }
+
+  @RequestMapping(value = "/owner/{id}/delete", method = RequestMethod.POST)
+  @Transactional
+  public ModelAndView remove(@PathVariable("id") long id, ModelAndView mav){
+    repository.deleteById(id);
     return new ModelAndView("redirect:/owner");
   }
 }
