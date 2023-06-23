@@ -8,6 +8,26 @@
 <body class="container">
   <h1 class="disply-4 mb-4" th:text="${title}"></h1>
   <p th:text="${msg}"></p>
-  <pre th:text="${data}"></pre>
+  <form method="post" action="/register" th:object="${formModel}">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" th:value="*{name}" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Create" />
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="item : ${data}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
